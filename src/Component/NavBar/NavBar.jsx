@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaCartPlus } from 'react-icons/fa';
+import DigitalTool from '../../assets/DigiTools.png'
 
 const NavBar = () => {
     return (
         <>
             <div className="flex justify-between items-center bg-base-100 py-4 mx-[200px]">
                 <div>
-                    <img src="/src/assets/DigiTools.png" alt="" />
+                    <img src={DigitalTool} alt="" />
                 </div>
                 <div>
                     <ul className='flex gap-4 font-semibold'>
