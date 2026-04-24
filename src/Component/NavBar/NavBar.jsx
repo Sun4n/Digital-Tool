@@ -5,7 +5,7 @@ import DigitalTool from '../../assets/DigiTools.png'
 const NavBar = () => {
     return (
         <>
-            <div className="flex justify-between items-center bg-base-100 py-4 mx-[200px]">
+            <div className="flex justify-between items-center bg-base-100 py-4 max-w-[1100px] mx-auto">
                 <div>
                     <img src={DigitalTool} alt="" />
                 </div>
