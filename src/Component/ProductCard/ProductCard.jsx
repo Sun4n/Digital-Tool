@@ -1,8 +1,11 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 
-const ProductCard = ({ product }) => {
-    console.log(product);
+const ProductCard = ({ product,selectedItem,setSelectedItem }) => {
+    // console.log(product);
+    const handleBuyNow=()=>{
+        setSelectedItem([...selectedItem,product])
+    }
     return (
         
             <div className="card w-[380px] bg-base-100 border border-[#F2F2F2] ">
@@ -18,13 +21,13 @@ const ProductCard = ({ product }) => {
                     <span className='text-left text-black text-[24px] font-bold'>${product.price}/</span><span className='text-left text-[#627382] text-[1rem]'>{product.period}</span>
 
                     </div>
-                    {product.features.map((feature)=>{
-                       return( <ul className='text-left'>
+                    {product.features.map((feature,indx)=>{
+                       return( <ul className='text-left' key={indx}>
                             <li className='flex items-center gap-2 text-green-500'><FaCheck /><p className='text-[#627382] text-[1rem]'>{feature}</p></li>
                         </ul>
                     )})}
                     <div className="mt-6">
-                        <button className="btn h-14 bg-linear-65 from-[#4F39F6] to-[#9514FA] text-white rounded-[100px] btn-block">Buy Now</button>
+                        <button onClick={handleBuyNow} className="btn h-14 bg-linear-65 from-[#4F39F6] to-[#9514FA] text-white rounded-[100px] btn-block">Buy Now</button>
                     </div>
                 </div>
             </div>
