@@ -8,7 +8,7 @@ import Rating from './Component/Rating/Rating'
 
 function App() {
   const product = async()=>{
-    const res = await fetch("/public/data.json")
+    const res = await fetch("/data.json")
     return res.json()
   }
 
