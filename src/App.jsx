@@ -5,6 +5,7 @@ import Banner from './Component/Banner/Banner'
 import NavBar from './Component/NavBar/NavBar'
 import Premium from './Component/Premium/Premium'
 import Rating from './Component/Rating/Rating'
+import Step from './Component/Steps/Step'
 
 function App() {
   const product = async()=>{
@@ -24,6 +25,7 @@ function App() {
       <Premium productPromise = {productPromise}></Premium>
 
       </Suspense>
+      <Step></Step>
     </>
   )
 }
