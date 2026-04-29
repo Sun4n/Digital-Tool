@@ -7,6 +7,7 @@ import Premium from './Component/Premium/Premium'
 import Rating from './Component/Rating/Rating'
 import Step from './Component/Steps/Step'
 import Pricing from './Component/Pricing/Pricing'
+import Footer from './Component/Footer/Footer'
 
 function App() {
   const product = async () => {
@@ -24,12 +25,13 @@ function App() {
       <NavBar count={count} setCount={setCount}></NavBar>
       <Banner></Banner>
       <Rating></Rating>
-      <Suspense>
+      <Suspense fallback={<span className="loading loading-spinner text-primary flex justify-center items-center"></span>}>
         <Premium productPromise={productPromise} selectedItem={selectedItem} setSelectedItem={setSelectedItem} total={total} setTotal={setTotal} count={count} setCount={setCount}></Premium>
 
       </Suspense>
       <Step></Step>
       <Pricing></Pricing>
+      <Footer></Footer>
 
 
     </>
