@@ -1,10 +1,12 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 
-const ProductCard = ({ product,selectedItem,setSelectedItem }) => {
+const ProductCard = ({ product,selectedItem,setSelectedItem,count,setCount }) => {
     // console.log(product);
     const handleBuyNow=()=>{
         setSelectedItem([...selectedItem,product])
+        const newCount=count+1
+        setCount(newCount)
     }
     return (
         

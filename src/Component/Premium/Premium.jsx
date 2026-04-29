@@ -3,18 +3,15 @@ import Product from '../ProductCard/Product';
 import Cart from '../ProductCard/Cart';
 
 
-const Premium = ({ productPromise }) => {
+const Premium = ({ productPromise,selectedItem, setSelectedItem, total, setTotal,count,setCount }) => {
     const productsData = use(productPromise)
     // console.log(productData);
     const [isSelected, setIsSelected] = useState(true)
-    const [selectedItem,setSelectedItem] = useState([])
-    const [total,setTotal]=useState(0)
-    const price = ()=>{
-        selectedItem.map((item)=>{
-            const newTotal = total+item.price
-            setTotal(newTotal)
-        })
-    }
+   
+   const price = () => {
+    const total = selectedItem.reduce((acc, item) => acc + item.price, 0);
+    setTotal(total);
+};
     return (
         <>
             <div className='max-w-[1200px] mx-auto text-center space-y-[16px]'>
@@ -25,7 +22,7 @@ const Premium = ({ productPromise }) => {
                     <button onClick={() => {setIsSelected(false); price()}} className={`px-[16px] py-[12px] ${isSelected || "h-14 bg-linear-65 from-[#4F39F6] to-[#9514FA] text-white"} rounded-[1000px]`}>Cart({selectedItem.length})</button>
                 </div>
                 {
-                    isSelected ? <Product productsData={productsData} selectedItem={selectedItem} setSelectedItem={setSelectedItem}></Product> : <Cart selectedItem={selectedItem} setSelectedItem={setSelectedItem} total={total}></Cart>
+                    isSelected ? <Product productsData={productsData} selectedItem={selectedItem} setSelectedItem={setSelectedItem} count={count} setCount={setCount}></Product> : <Cart selectedItem={selectedItem} setSelectedItem={setSelectedItem} total={total} setTotal = {setTotal} count={count} setCount={setCount}></Cart>
                 }
 
             
