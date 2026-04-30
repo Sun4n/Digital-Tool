@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({ product,selectedItem,setSelectedItem,count,setCount }) => {
     // console.log(product);
@@ -7,6 +8,7 @@ const ProductCard = ({ product,selectedItem,setSelectedItem,count,setCount }) =>
         setSelectedItem([...selectedItem,product])
         const newCount=count+1
         setCount(newCount)
+         toast("Add a product in your cart")
     }
     return (
         

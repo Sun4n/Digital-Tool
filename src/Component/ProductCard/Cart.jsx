@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Cart = ({ selectedItem, setSelectedItem ,total,setTotal,count,setCount }) => {
     // console.log(selectedItem);
@@ -8,6 +9,7 @@ const Cart = ({ selectedItem, setSelectedItem ,total,setTotal,count,setCount }) 
         setSelectedItem(filterItem)   
         setTotal(total-item.price)
         setCount(count-1)
+         toast("Remove product on your cart")
         
     }
     const handleProceed =()=>{
